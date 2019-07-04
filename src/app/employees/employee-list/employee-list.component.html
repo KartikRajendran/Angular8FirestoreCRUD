@@ -1,0 +1,16 @@
+<table class="table table-hover">
+    <thead>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Mobile</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of list">
+            <td (click)="onEdit(emp)">[{{ emp.empCode }}] - {{ emp.fullName }}</td>
+            <td (click)="onEdit(emp)">{{emp.position}}</td>
+            <td (click)="onEdit(emp)">{{emp.mobile}}</td>
+            <td><a (click)="onDelete(emp.id)" class="btn text-danger"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </tbody>
+</table>
