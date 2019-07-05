@@ -13,6 +13,9 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { EmployeeService } from './shared/employee.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; // importing the module for searching
+import { Ng2OrderModule } from 'ng2-order-pipe'; // imported for sorting list purpose
+import { NgxPaginationModule } from 'ngx-pagination'; // imported for Pagination Purpose
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { EmployeeService } from './shared/employee.service';
     AngularFirestoreModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

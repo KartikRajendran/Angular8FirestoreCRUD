@@ -1,1 +1,38 @@
 https://www.youtube.com/watch?v=5I6k77uqtLY&list=PLjC4UKOOcfDQjfU3FHqKzTwKwoNYp0ki_&index=2
+
+Npm Installed:
+
+<!-- For Angular Search Filter -->
+
+sudo npm i ng2-search-filter --save
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; --In app.module.ts
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter">      
+</nav>
+
+<!-- For Angular Search Filter -->    
+
+<!-- For Angular Sort feature -->    
+
+npm install ng2-order-pipe --save
+import { Ng2OrderModule } from 'ng2-order-pipe'; --In app.module.ts
+
+//sorting
+  key: string = 'name'; //set default
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
+  <th (click)="sort('name')">
+    Name
+    <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+<!-- For Angular Pagination feature -->    
+
+npm install ngx-pagination --save
+
+<!-- For Angular Pagination feature -->    

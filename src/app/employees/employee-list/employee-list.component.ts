@@ -11,10 +11,22 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EmployeeListComponent implements OnInit {
 
-  list: Employee[];
   constructor(private service: EmployeeService,
               private fireStore: AngularFirestore,
               private toastr: ToastrService) { }
+
+  list: Employee[];
+
+  // sorting
+  key = 'fullName'; // set default
+  reverse = false;
+  // initializing p to one
+  p = 1;
+  search = '';
+  sort(key) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
   ngOnInit() {
     this.service.getEmployees().subscribe(actionArray => {
